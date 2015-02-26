@@ -1,0 +1,33 @@
+{
+  "name": "dsmc",
+  "version": "0.0.1a",
+  "description": "A node utility for Creating SailsJS Models and Sails Controllers from command line.",
+  "main": "csmsc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "url": "https://github.com/wandertosee/dsmc"
+  },
+  "keywords": [
+    "SailsJS",
+    "Sails",
+    "Sails.js",
+    "Model",
+    "Controller"
+  ],
+  "author": "Colin Kennedy",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.2"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "dsmc": "./bin/dsmc.js"
+  },
+  "bugs": {
+    "url": "https://github.com/wandertosee/dmsc/issues"
+  },
+  "homepage": "https://github.com/wandertosee/dsmc",
+  "devDependencies": {}
+}
