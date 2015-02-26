@@ -1,6 +1,6 @@
 {
   "name": "dsmc",
-  "version": "0.0.1a",
+  "version": "0.0.1b",
   "description": "A node utility for Creating SailsJS Models and Sails Controllers from command line.",
   "main": "csmsc.js",
   "scripts": {

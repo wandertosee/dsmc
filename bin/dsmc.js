@@ -240,7 +240,7 @@ function createController(controller, fields) {
 }
 
 function createDsmc() {
-	return    "\n" + 
+	return        "\n" + 
     "var setConfig = function(req, defaults) {\n" + 
     "\n" + 
     "    var config = {};\n" + 
@@ -274,6 +274,7 @@ function createDsmc() {
     "        searchObj[config.searchType] = config.criteria;\n" + 
     "        config.query[config.searchField] = searchObj;\n" + 
     "    }\n" + 
+    "    config.searchObj = searchObj;\n" + 
     "\n" + 
     "    // limit is the default or as specified in the query\n" + 
     "    // if the query value for limit is 0 return all\n" + 
@@ -325,7 +326,7 @@ function createDsmc() {
     "\n" + 
     "var searchRelatedModel = function(res, config, searchConfig) {\n" + 
     "    var foreignWhereQuery = {};\n" + 
-    "    foreignWhereQuery[searchConfig.via] = { contains: config.criteria };\n" + 
+    "    foreignWhereQuery[searchConfig.via] = config.searchObj;\n" + 
     "    // returned from initial related data query\n" + 
     "    // then reset and returned from join table\n" + 
     "    var foreignIdArray = []; \n" + 
@@ -371,7 +372,7 @@ function createDsmc() {
     "    var joinTableName = joinTableModelField.toLowerCase() + '__' + joinTableForeignField;\n" + 
     "\n" + 
     "    var whereQuery = {};\n" + 
-    "    whereQuery[searchConfig.via] = { contains: config.criteria };\n" + 
+    "    whereQuery[searchConfig.via] = config.searchObj;\n" + 
     "\n" + 
     "    // get matching related data and ids\n" + 
     "    // get foreign data using \n" + 

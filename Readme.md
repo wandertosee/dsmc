@@ -15,7 +15,7 @@ npm install -g dsmc
 	-n is the name of the model and controller.
 	-f is a list of comma separated fields
 	-c is a list of comma separated collections (one to many)
-	-m is a list of comma separated models (one to onew)
+	-m is a list of comma separated models (one to one)
 
 ### Examples
 
