@@ -1,7 +1,8 @@
 # dsmc
 
-This is a node.js command line utility that creates SailsJS base Models and Controllers for API use. 
-A generic controller called _dsmcController.js will be created in the common folder of the root directory of the project.
+This is a node.js command line utility that creates SailsJS base Models and Controllers for API use. This pacakge is a replacement for csmsc.
+Created controllers set inital defaults and use methods from a default controller. Controllers can be customized to override default methods or extended with additional methods. 
+A file called _dsmcController.js will be created in the common folder of the root directory of the project.
 
 ## Installation
 
