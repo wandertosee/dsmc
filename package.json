@@ -1,7 +1,7 @@
 {
   "name": "dsmc",
-  "version": "0.0.1c",
-  "description": "A node utility for Creating SailsJS Models and Sails Controllers from command line.",
+  "version": "0.0.1d",
+  "description": "A node utility for Creating SailsJS Models and Controllers which use a Default controller for common functionality.",
   "main": "csmsc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,6 +13,8 @@
     "SailsJS",
     "Sails",
     "Sails.js",
+    "Default",
+    "csmsc",
     "Model",
     "Controller"
   ],
