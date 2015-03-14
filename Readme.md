@@ -126,6 +126,15 @@ createdBy and updatedBy values must be passed to the api or will default to 'adm
 
 	&searchType=endsWith
 
+	The following characters are special characters that can be included in the search string
+	
+	'=', '<', '<=', '>', '>=', '!'
+
+	equals, less than, less or equal to, greater than, greater or equal to, is not
+
+	'*'
+
+	is a wild card, used at the end of a string will search for starts with string, used at the end, it will search for starts with string.
 
 #### LIMIT, SKIP
 
