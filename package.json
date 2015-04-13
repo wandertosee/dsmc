@@ -1,6 +1,6 @@
 {
   "name": "dsmc",
-  "version": "0.0.1h",
+  "version": "0.0.1i",
   "description": "A node utility for Creating SailsJS Models and Controllers which use a Default controller for common functionality.",
   "main": "csmsc.js",
   "scripts": {
