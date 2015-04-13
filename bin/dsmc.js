@@ -52,9 +52,11 @@ process.argv.forEach(function (val, index, array) {
 	}
 	if (val.indexOf("-f") === 0) {
 		fields = array[index+1];
+		console.log(fields);
 	}
 	if (val.indexOf("-m") === 0) {
-		models = array[index+1];
+		models = array[index+1]
+		console.log(models);
 	}
 	if (val.indexOf("-c") === 0) {
 		collections = array[index+1];
@@ -199,7 +201,7 @@ function createModel(controller, fields, models, collections) {
 	"	 attributes: {\r\t"+
 	"	    " + fieldsOutput.join(',\r') + ",\r\t"+
 	"	    " + collectionsOutput.join('\r') + "\r\t"+
-	"	    " + modelsOutput.join(',\r') + "\r\t"+
+	"	    " + modelsOutput.join('\r') + "\r\t"+
 	"	    " + recordKeepingOutput.join(',\r') + "\r\t"+
 	"	 }\r\t"+
 	"};\r\t";
@@ -224,8 +226,6 @@ function createController(controller, fields) {
 	"}\r" +
 	"\r" +
 	"var methods = require('" + dsmcPath + "')(defaults);\r" +
-	"\r" +
-	"module.exports = methods;\r" +
 	"\r" +
 	"// Add custom methods and method overrides here\r" +
 	"/*\r" +
@@ -315,7 +315,7 @@ function createDsmc() {
 "    }", 
 "", 
 "    if (searchString !== undefined && searchString !== 'undefined') {", 
-"        var searchObj = {}", 
+"        var searchObj = {};", 
 "        searchObj[searchTypeStringArr[0]] = searchString;", 
 "        query[searchField] = searchObj;", 
 "    }", 
@@ -351,7 +351,7 @@ function createDsmc() {
 "    console.log(config.query);", 
 "    // limit is the default or as specified in the query", 
 "    // if the query value for limit is 0 return all", 
-"    config.limit = setLimit(query);", 
+"    config.limit = setLimit(query, defaults);", 
 "", 
 "    // sort order", 
 "    var dir = query.dir || defaults.dir || 'desc';", 
