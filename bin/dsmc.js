@@ -52,11 +52,9 @@ process.argv.forEach(function (val, index, array) {
 	}
 	if (val.indexOf("-f") === 0) {
 		fields = array[index+1];
-		console.log(fields);
 	}
 	if (val.indexOf("-m") === 0) {
-		models = array[index+1]
-		console.log(models);
+		models = array[index+1];
 	}
 	if (val.indexOf("-c") === 0) {
 		collections = array[index+1];
@@ -299,7 +297,12 @@ function createDsmc() {
 "", 
 "    // In SailsJs like is equals unless the searchCriteria includes '%' in the searchCriteria", 
 "    searchType = (searchType === '=') ? 'like' : searchType || query.searchType || defaults.searchType;", 
-"    var nonWordChar = (searchTypeArray.indexOf(matchNonWordChars[0]) > -1) ? matchNonWordChars[0] : [];", 
+"    var nonWordChar = [];",
+"    if (searchTypeArray.length > 0 && matchNonWordChars) {",
+"       if (searchTypeArray.indexOf(matchNonWordChars[0]) > -1) {",
+"           nonWordChar = matchNonWordChars[0];",
+"       }",
+"    }",
 "    // return searchType and non word character matches", 
 "    return [searchType, nonWordChar];", 
 "}", 
@@ -315,7 +318,7 @@ function createDsmc() {
 "    }", 
 "", 
 "    if (searchString !== undefined && searchString !== 'undefined') {", 
-"        var searchObj = {};", 
+"        var searchObj = {}", 
 "        searchObj[searchTypeStringArr[0]] = searchString;", 
 "        query[searchField] = searchObj;", 
 "    }", 
@@ -550,6 +553,7 @@ function createDsmc() {
 "            var array = arrayFromObject(config.model);", 
 "            // _displayOrder = creation order of properties in model definition", 
 "            config.model._displayOrder = array;", 
+"            config.model._primaryField = defaults.primaryField;",
 "            return res.json(config.model);", 
 "        },", 
 "", 
